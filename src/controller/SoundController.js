@@ -25,29 +25,30 @@ const { PythonShell } = require("python-shell");
 
 class SoundController {
   create(request, response) {
-    PythonShell.run("src/services/run_model.py", null)
-      .then((message) => {
-        // Quando o processo terminar, realizar o download do arquivo .wav na pasta assets/audios
+    // PythonShell.run("src/services/run_model.py", null)
+    //   .then((message) => {
+    //     // Quando o processo terminar, realizar o download do arquivo .wav na pasta assets/audios
+    //     response.download(
+    //       "assets/audios/aitmosphere.wav",
+    //       "aitmosphere.wav",
+    //       (err) => {
+    //         if (err) {
+    //           console.log("Erro ao realizar o download do arquivo:", err);
+    //           return response
+    //             .status(500)
+    //             .json({ error: "Erro ao realizar o download do arquivo" });
+    //         }
+    //       }
+    //     );
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //     return response
+    //       .status(500)
+    //       .json({ error: "Erro ao executar o processo Python" });
+    //   });
 
-        response.download(
-          "assets/audios/aitmosphere.wav",
-          "aitmosphere.wav",
-          (err) => {
-            if (err) {
-              console.log("Erro ao realizar o download do arquivo:", err);
-              return response
-                .status(500)
-                .json({ error: "Erro ao realizar o download do arquivo" });
-            }
-          }
-        );
-      })
-      .catch((error) => {
-        console.log(error);
-        return response
-          .status(500)
-          .json({ error: "Erro ao executar o processo Python" });
-      });
+    return response.json({});
   }
 }
 
