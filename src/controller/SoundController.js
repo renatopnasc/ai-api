@@ -26,7 +26,7 @@ const path = require("path");
 
 class SoundController {
   create(request, response) {
-    PythonShell.run("src/services/run_model.py")
+    PythonShell.run("src/services/run_model.py", null)
       .then((message) => {
         // Quando o processo terminar, realizar o download do arquivo .wav na pasta assets/audios
 
