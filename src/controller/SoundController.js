@@ -22,7 +22,6 @@
 // module.exports = SoundController;
 
 const { PythonShell } = require("python-shell");
-const path = require("path");
 
 class SoundController {
   create(request, response) {
