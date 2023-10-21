@@ -25,6 +25,10 @@ const { PythonShell } = require("python-shell");
 
 class SoundController {
   create(request, response) {
+    const options = {
+      pythonPath: "venv",
+    };
+
     PythonShell.run("src/services/run_model.py", null)
       .then((message) => {
         // Quando o processo terminar, realizar o download do arquivo .wav na pasta assets/audios
